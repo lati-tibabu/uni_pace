@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uni_pace/auth_screen/login.dart';
 import 'package:uni_pace/components/primarybutton.dart';
 import 'package:uni_pace/components/textfield.dart';
 import 'package:uni_pace/onboarding/onboarding_pages.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class Signup extends StatefulWidget {
+  const Signup({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Signup> createState() => _LoginState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginState extends State<Signup> {
   bool _isChecked = false;
 
   void _onCheckboxChanged(bool? newValue) {
@@ -187,14 +188,22 @@ class _LoginState extends State<Login> {
                           color: const Color(0xFFBD9F00)),
                     ),
                     const SizedBox(width: 5.0, height: 0.0),
-                    Text(
-                      "Login",
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF4B3B00),
-                        decoration: TextDecoration.underline,
-                        // fontStyle: FontStyle.
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => Login()),
+                        );
+                      },
+                      child: Text(
+                        "Login",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF4B3B00),
+                          decoration: TextDecoration.underline,
+                          // fontStyle: FontStyle.
+                        ),
                       ),
                     ),
                   ],

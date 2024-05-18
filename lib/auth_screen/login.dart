@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uni_pace/auth_screen/signup.dart';
 import 'package:uni_pace/components/primarybutton.dart';
 import 'package:uni_pace/components/textfield.dart';
 import 'package:uni_pace/onboarding/onboarding_pages.dart';
@@ -51,7 +52,7 @@ class _LoginState extends State<Login> {
               color: Color(0xFFD8B600),
             ),
             title: Text(
-              "Sign Up",
+              "Login",
               style: GoogleFonts.montserrat(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -65,11 +66,6 @@ class _LoginState extends State<Login> {
                 const SizedBox(width: 0.0, height: 80.0),
                 // ignore: prefer_const_constructors
                 Center(
-                  child: const Textfield(hintName: "Name", obscure: false),
-                ),
-                const SizedBox(width: 0.0, height: 10.0),
-                // ignore: prefer_const_constructors
-                Center(
                   child: const Textfield(hintName: "Email", obscure: false),
                 ),
                 const SizedBox(width: 0.0, height: 10.0),
@@ -78,34 +74,7 @@ class _LoginState extends State<Login> {
                   child: const Textfield(hintName: "Password", obscure: true),
                 ),
                 const SizedBox(width: 0.0, height: 10.0),
-
-                SizedBox(
-                  width: 300,
-                  // decoration: BoxDecoration(
-                  //   // color: Colors.black54,
-                  // ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Checkbox(
-                        value: _isChecked,
-                        onChanged: _onCheckboxChanged,
-                      ),
-                      SizedBox(
-                        width: 250,
-                        child: Text(
-                          "By signing up, you agree to the Terms of Service and Privacy Policy",
-                          style: GoogleFonts.montserrat(
-                            fontSize: 13,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: 0.0, height: 10.0),
-                const Primarybutton(ButtonText: "Sign Up"),
+                const Primarybutton(ButtonText: "Login"),
 
                 const SizedBox(width: 0.0, height: 10.0),
 
@@ -164,7 +133,7 @@ class _LoginState extends State<Login> {
                           ),
                           const SizedBox(width: 5.0, height: 0.0),
                           Text(
-                            "Sign Up with Google",
+                            "Login with Google",
                             style: GoogleFonts.montserrat(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
@@ -180,21 +149,29 @@ class _LoginState extends State<Login> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Already have an account?",
+                      "Don't have an account?",
                       style: GoogleFonts.montserrat(
                           fontSize: 14,
                           fontWeight: FontWeight.normal,
                           color: const Color(0xFFBD9F00)),
                     ),
                     const SizedBox(width: 5.0, height: 0.0),
-                    Text(
-                      "Login",
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF4B3B00),
-                        decoration: TextDecoration.underline,
-                        // fontStyle: FontStyle.
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => Signup()),
+                        );
+                      },
+                      child: Text(
+                        "Sign Up",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF4B3B00),
+                          decoration: TextDecoration.underline,
+                          // fontStyle: FontStyle.
+                        ),
                       ),
                     ),
                   ],

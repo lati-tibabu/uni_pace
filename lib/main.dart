@@ -22,6 +22,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:uni_pace/auth_screen/login.dart';
 import 'package:uni_pace/auth_screen/signup.dart';
 import 'onboarding/splash_screen.dart';
 import 'onboarding/onboarding_pages.dart';
@@ -36,9 +37,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        // Set the primarySwatch property for a more complete color scheme
+        primarySwatch: Colors.blue,
+        primaryColor: Color(0xffFFD600), // Set your custom accent color
+      ),
       debugShowCheckedModeBanner: false,
       // home: SplashScreen(), // Start with SplashScreen
-      home: Login(),
+      home: SplashScreen(),
     );
   }
 }

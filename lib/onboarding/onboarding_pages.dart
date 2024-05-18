@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uni_pace/auth_screen/login.dart';
 import 'package:uni_pace/auth_screen/signup.dart';
 import 'pages.dart';
 // import 'splash_screen.dart';
@@ -124,7 +125,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => Login()),
+                      MaterialPageRoute(builder: (context) => Signup()),
                     );
                   },
                   child: Text(
@@ -142,7 +143,12 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                       minimumSize: WidgetStateProperty.all(Size(280, 60)),
                       backgroundColor:
                           WidgetStateProperty.all(Color(0xFFFFF4B9))),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => Login()),
+                    );
+                  },
                   child: Text(
                     "Login",
                     style: GoogleFonts.montserrat(
