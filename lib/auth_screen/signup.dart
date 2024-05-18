@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uni_pace/components/passwordfield.dart';
+import 'package:uni_pace/components/primarybutton.dart';
+import 'package:uni_pace/components/textfield.dart';
 import 'package:uni_pace/onboarding/onboarding_pages.dart';
 
 class Login extends StatefulWidget {
@@ -25,7 +28,7 @@ class _LoginState extends State<Login> {
         Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/background/auth_bg1.png"),
               fit: BoxFit.cover,
@@ -37,12 +40,13 @@ class _LoginState extends State<Login> {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             leading: IconButton(
-              icon: Icon(Icons.chevron_left),
+              icon: const Icon(Icons.chevron_left),
               iconSize: 30,
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => OnboardingPages()),
+                  MaterialPageRoute(
+                      builder: (context) => const OnboardingPages()),
                 );
               },
               color: Colors.black,
@@ -59,83 +63,26 @@ class _LoginState extends State<Login> {
           ),
           body: Column(
             children: [
-              SizedBox(width: 0.0, height: 80.0),
+              const SizedBox(width: 0.0, height: 80.0),
+              // ignore: prefer_const_constructors
               Center(
-                child: Container(
-                  width: 330,
-                  height: 50,
-                  child: TextField(
-                    style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        color: Color.fromARGB(255, 67, 55, 0),
-                        fontWeight: FontWeight.bold),
-                    decoration: InputDecoration(
-                      contentPadding:
-                          EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide(
-                          color: Color(0xFFD8B600),
-                          width: 2,
-                        ),
-                      ),
-                      labelText: "FullName",
-                    ),
-                  ),
-                ),
+                child: Textfield(hintName: "name"),
               ),
-              SizedBox(width: 0.0, height: 10.0),
+              const SizedBox(width: 0.0, height: 10.0),
+              // ignore: prefer_const_constructors
               Center(
-                child: Container(
-                  width: 330,
-                  height: 50, // Adjust the height here
-                  child: TextField(
-                    style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        color: Color.fromARGB(255, 67, 55, 0),
-                        fontWeight: FontWeight.bold),
-                    decoration: InputDecoration(
-                      contentPadding:
-                          EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide(
-                          color: Color(0xFFD8B600),
-                          width: 2,
-                        ),
-                      ),
-                      labelText: "Email",
-                    ),
-                  ),
-                ),
+                child: Textfield(hintName: "email"),
               ),
-              SizedBox(width: 0.0, height: 10.0),
+              const SizedBox(width: 0.0, height: 10.0),
+              // ignore: prefer_const_constructors
               Center(
-                child: Container(
-                  width: 330,
-                  height: 50, // Adjust the height here
-                  child: TextField(
-                    obscureText: true,
-                    style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        color: Color.fromARGB(255, 67, 55, 0),
-                        fontWeight: FontWeight.bold),
-                    decoration: InputDecoration(
-                      contentPadding:
-                          EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide(
-                          color: Color(0xFFD8B600),
-                          width: 2,
-                        ),
-                      ),
-                      labelText: "Password",
-                    ),
-                  ),
-                ),
+                child: Passwordfield(hintName: "password"),
               ),
-              Center(
+              Container(
+                width: 300,
+                decoration: BoxDecoration(
+                  color: Colors.black54,
+                ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -155,7 +102,8 @@ class _LoginState extends State<Login> {
                     ),
                   ],
                 ),
-              )
+              ),
+              const Primarybutton(ButtonText: "Sign Up"),
             ],
           ),
         )
