@@ -3,8 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Textfield extends StatelessWidget {
   final String hintName;
+  final bool obscure;
 
-  const Textfield({Key? key, required this.hintName}) : super(key: key);
+  const Textfield({Key? key, required this.hintName, required this.obscure})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,11 +21,12 @@ class Textfield extends StatelessWidget {
       ),
       child: Center(
         child: TextField(
-          // obscureText: true,
+          obscureText: obscure, //fix this is showing error
           style: GoogleFonts.montserrat(
-              fontSize: 14,
-              color: const Color.fromARGB(255, 67, 55, 0),
-              fontWeight: FontWeight.bold),
+            fontSize: 14,
+            color: const Color.fromARGB(255, 67, 55, 0),
+            // fontWeight: FontWeight.bold,
+          ),
           decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 20),
             hintText: hintName, //hintName shoud come here as argument
