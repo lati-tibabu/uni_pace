@@ -30,7 +30,6 @@ class _OnboardingPagesState extends State<OnboardingPages> {
               ),
             ),
           ),
-
           // PageView
           PageView(
             onPageChanged: (index) {

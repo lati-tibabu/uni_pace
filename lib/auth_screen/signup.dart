@@ -79,7 +79,7 @@ class _LoginState extends State<Login> {
                           width: 2,
                         ),
                       ),
-                      labelText: "Name",
+                      labelText: "FullName",
                     ),
                   ),
                 ),
