@@ -31,11 +31,11 @@ class TopCourseCard extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-              color: Color.fromARGB(116, 0, 0, 0),
+              color: Color.fromARGB(56, 0, 0, 0),
               blurRadius: 3,
               offset: Offset(0, 5)),
         ],
-        color: const Color.fromARGB(255, 255, 247, 224),
+        color: Color.fromARGB(255, 255, 255, 255),
         borderRadius: BorderRadius.circular(30),
       ),
       child: Column(
@@ -116,6 +116,8 @@ class TopCourseCard extends StatelessWidget {
                           Text(
                             //rate and numbers of reviews pass here
                             "$rate($reviewNo)",
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                             style: GoogleFonts.montserrat(
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -141,6 +143,8 @@ class TopCourseCard extends StatelessWidget {
                       Text(
                         //number of total registered users pass here
                         "$registeredUser Registered",
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                         style: GoogleFonts.montserrat(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
