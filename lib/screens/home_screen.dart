@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uni_pace/components/textfield.dart';
+import 'package:uni_pace/components/topcoursecard.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -111,96 +112,44 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              Container(
-                width: 320,
-                height: 200,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color.fromARGB(116, 0, 0, 0),
-                        blurRadius: 3,
-                        offset: Offset(0, 5)),
-                  ],
-                  color: const Color.fromARGB(255, 255, 247, 224),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Column(
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding:
+                    EdgeInsets.only(left: 20, top: 10, right: 10, bottom: 10),
+                child: Row(
                   children: [
-                    Container(
-                      width: double.infinity,
-                      height: 95,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          topRight: Radius.circular(30),
-                        ),
-                        image: DecorationImage(
-                          image: AssetImage(
-                              "assets/pictures/course_thumbnail/topcourse_image1.jpg"),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      // child: Widget(),
+                    TopCourseCard(
+                      thumbnail: "topcourse_image1.jpg",
+                      courseName: "Introduction to Programming",
+                      publisher: "Sarah Johnson",
+                      publishedYear: "2024",
+                      rate: "4.5",
+                      reviewNo: "129",
+                      registeredUser: "500",
+                      context: context,
                     ),
-                    Container(
-                      margin: EdgeInsets.only(left: 10, right: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Introduction to Programming",
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                  color: Color(0xFF000000),
-                                ),
-                              ),
-                              Text(
-                                "4.5 Star",
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                  color: Color(0xFF000000),
-                                ),
-                              )
-                            ],
-                          ),
-                          Text(
-                            textAlign: TextAlign.start,
-                            "Published in 2023",
-                            style: GoogleFonts.montserrat(
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                              color: Color(0xFF000000),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Sarah Johnson",
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                  color: Color(0xFF000000),
-                                ),
-                              ),
-                              Text(
-                                "500 Registered",
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                  color: Color(0xFF000000),
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    )
+                    SizedBox(width: 10, height: 0.0),
+                    TopCourseCard(
+                      thumbnail: "topcourse_image2.jpg",
+                      courseName: "Basic Web Development",
+                      publisher: "Michael Smith",
+                      publishedYear: "2022",
+                      rate: "4.8",
+                      reviewNo: "86",
+                      registeredUser: "700",
+                      context: context,
+                    ),
+                    SizedBox(width: 10, height: 0.0),
+                    TopCourseCard(
+                      thumbnail: "topcourse_image3.jpg",
+                      courseName: "Machine Learning Fundamentals",
+                      publisher: "Emily Chen",
+                      publishedYear: "2024",
+                      rate: "4.9",
+                      reviewNo: "159",
+                      registeredUser: "850",
+                      context: context,
+                    ),
                   ],
                 ),
               )
