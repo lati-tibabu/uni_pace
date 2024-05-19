@@ -4,6 +4,7 @@ import 'package:uni_pace/auth_screen/signup.dart';
 import 'package:uni_pace/components/primarybutton.dart';
 import 'package:uni_pace/components/textfield.dart';
 import 'package:uni_pace/onboarding/onboarding_pages.dart';
+import 'package:uni_pace/screens/home_screen.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -74,8 +75,32 @@ class _LoginState extends State<Login> {
                   child: const Textfield(hintName: "Password", obscure: true),
                 ),
                 const SizedBox(width: 0.0, height: 10.0),
-                const Primarybutton(ButtonText: "Login"),
-
+                // const Primarybutton(ButtonText: "Login"),
+                ElevatedButton(
+                  style: ButtonStyle(
+                      minimumSize: WidgetStateProperty.all(const Size(280, 60)),
+                      backgroundColor:
+                          WidgetStateProperty.all(const Color(0xFFFFD600))),
+                  onPressed: () {
+                    // Navigator.pushReplacement(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => Login()),
+                    // );
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()),
+                    );
+                  },
+                  child: Text(
+                    "Login",
+                    style: GoogleFonts.montserrat(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
                 const SizedBox(width: 0.0, height: 10.0),
 
                 Center(

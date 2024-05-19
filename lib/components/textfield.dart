@@ -34,6 +34,13 @@ class Textfield extends StatelessWidget {
               fontSize: 16,
             ),
             border: InputBorder.none,
+            // (obscure == 1) ? Text("Hello") : Text("bye"),
+            suffixIcon: obscure
+                ? IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.visibility_off),
+                  )
+                : null,
           ),
         ),
       ),
