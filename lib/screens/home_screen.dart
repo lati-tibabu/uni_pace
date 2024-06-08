@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uni_pace/components/categoriescard.dart';
 import 'package:uni_pace/components/icon.dart';
 import 'package:uni_pace/components/mylearningcard.dart';
 import 'package:uni_pace/components/progressbar.dart';
-import 'package:uni_pace/components/textfield.dart';
 import 'package:uni_pace/components/topcoursecard.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,7 +15,7 @@ class HomeScreen extends StatelessWidget {
       // body: Text("Home Screen"),
       appBar: AppBar(
         toolbarHeight: 150,
-        backgroundColor: Color(0xFFFFD600),
+        backgroundColor: const Color(0xFFFFD600),
         // elevation: 0,
         title: SafeArea(
           child: Column(
